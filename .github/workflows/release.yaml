@@ -41,7 +41,7 @@ jobs:
       imageVersionShort: ${{ steps.TAG_UTIL.outputs.imageVersionShort}}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: ${{ github.event.inputs.branch }}
       - name: Generate tag utilities
@@ -80,7 +80,7 @@ jobs:
             build-image-name: "ai-lab-playground-chat-cuda"
             archs: amd64
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: ${{ needs.tag.outputs.githubTag }}
       
