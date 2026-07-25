@@ -103,7 +103,7 @@ jobs:
           archs: ${{ matrix.archs }}
 
       - name: Login to ghcr.io
-        uses: redhat-actions/podman-login@v1
+        uses: redhat-actions/podman-login@v2
         with:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
