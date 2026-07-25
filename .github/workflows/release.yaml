@@ -91,7 +91,7 @@ jobs:
 
       - name: Build Playground Image
         id: build-image
-        uses: redhat-actions/buildah-build@v2
+        uses: redhat-actions/buildah-build@v3
         with:
           image: ${{ matrix.build-image-name }}
           tags: latest ${{ needs.tag.outputs.imageVersion }} ${{ needs.tag.outputs.imageVersionShort }}
