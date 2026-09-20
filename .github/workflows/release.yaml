@@ -34,7 +34,7 @@ jobs:
 
   tag:
     name: Tagging
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     outputs:
       githubTag: ${{ steps.TAG_UTIL.outputs.githubTag}}
       imageVersion: ${{ steps.TAG_UTIL.outputs.imageVersion}}
@@ -63,7 +63,7 @@ jobs:
   build:
     name: Build and Release ${{ matrix.build-image-name }}
     needs: tag
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     strategy:
       matrix:
         include:
@@ -120,7 +120,7 @@ jobs:
   release:
     needs: [tag, build]
     name: Release
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - name: Create Release
         id: create_release
